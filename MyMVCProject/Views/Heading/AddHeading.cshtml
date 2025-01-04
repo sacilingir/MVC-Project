@@ -17,13 +17,13 @@
         </div>
         <br />
         @Html.Label("Kategori")
-        @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control"})
+        @Html.DropDownListFor(x => x.CategoryID,(List<SelectListItem>)ViewBag.vlc,new { @class = "form-control"})
         <div style="color:red">
             @Html.ValidationMessageFor(x => x.CategoryID)
         </div>
         <br />
         @Html.Label("Yazar")
-        @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.WriterID, (List <SelectListItem>)ViewBag.vwc,new { @class = "form-control"})
         <div style="color:red">
             @Html.ValidationMessageFor(x => x.WriterID)
         </div>
