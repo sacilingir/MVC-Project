@@ -35,12 +35,12 @@ namespace BusinessLayer.Concrete
 
         public About GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _aboutDal.Get(x => x.AboutID == id);
         }
 
         public List<About> GetList()
         {
-            throw new NotImplementedException();
+            return _aboutDal.List();
         }
     }
 }
