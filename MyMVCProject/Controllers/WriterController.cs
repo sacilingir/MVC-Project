@@ -4,6 +4,7 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyMVCProject.Controllers
@@ -13,8 +14,8 @@ namespace MyMVCProject.Controllers
 
         WriterManager wm = new WriterManager(new EfWriterDal());
         WriterValidator writervalidator = new WriterValidator();
-
-        public IActionResult Index()
+		
+		public IActionResult Index()
         {
             var WriterValues = wm.GetList();
             return View(WriterValues);

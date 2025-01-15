@@ -345,6 +345,15 @@
     <None Include="wwwroot\AdminLTE-3.0.4\index2.html" />
     <None Include="wwwroot\AdminLTE-3.0.4\index3.html" />
     <None Include="wwwroot\AdminLTE-3.0.4\LICENSE" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\css\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\css\bootstrap\mixins\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\fonts\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\images\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\js\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\scss\.DS_Store" />
+    <None Include="wwwroot\AdminLTE-3.0.4\login-form-19\scss\bootstrap\.DS_Store" />
     <None Include="wwwroot\AdminLTE-3.0.4\pages\calendar.html" />
     <None Include="wwwroot\AdminLTE-3.0.4\pages\charts\chartjs.html" />
     <None Include="wwwroot\AdminLTE-3.0.4\pages\charts\flot.html" />

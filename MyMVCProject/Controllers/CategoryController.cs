@@ -3,6 +3,7 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -13,8 +14,8 @@ namespace MyMVCProject.Controllers
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
 
-
-        public ActionResult Index()
+		
+		public ActionResult Index()
         {
             return View();
         }
