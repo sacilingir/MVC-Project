@@ -24,10 +24,10 @@ namespace MyMVCProject.Controllers
             var adminuserinfo = c.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == p.AdminPassword);
             if(adminuserinfo != null)
             {
-                HttpContext.Session.SetString("xusername", p.AdminUserName);
+                HttpContext.Session.SetString("xusername", adminuserinfo.AdminUserName);
 				var claims = new List<Claim>
 					{
-						new Claim(ClaimTypes.Name, p.AdminUserName)
+						new Claim(ClaimTypes.Name, adminuserinfo.AdminUserName)
 					};
 
 				var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -44,7 +44,44 @@ namespace MyMVCProject.Controllers
             {
                 return View();
             }
-			return View();
 		}
-	}
+        [HttpGet]
+        public IActionResult WriterLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult WriterLogin(Writer p)
+        {
+            Context c = new Context();
+            var writerinfo = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.WriterPassword == p.WriterPassword);
+            if(writerinfo != null)
+            {
+                HttpContext.Session.SetString("xusername", writerinfo.WriterName);
+                var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, writerinfo.WriterName)
+                    };
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = false, // Tarayıcı kapandığında oturum sonlansın
+                };
+
+                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+                return RedirectToAction("MyContent", "WriterPanelContent");
+            }
+            else
+            {
+                return RedirectToAction("WriterLogin");
+            }
+
+
+
+
+            return View();
+        }
+
+    }
 }
